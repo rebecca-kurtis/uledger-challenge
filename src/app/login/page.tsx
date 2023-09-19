@@ -1,8 +1,19 @@
-import React from "react";
 
-const LoginPage : React.FC = () => {
+
+import React from 'react';
+import LoginForm from './LoginForm';
+
+const LoginPage: React.FC = () => {
+  const handleLogin = (username: string, password: string) => {
+ 
+    console.log(`Logging in with username: ${username} and password: ${password}`);
+  };
+
   return (
-    <div className="flex justify-end justify-col container mx-auto mt-8"></div>
+    <div>
+      <h1>Login Page</h1>
+      <LoginForm onSubmit={handleLogin} />
+    </div>
   );
 };
 
