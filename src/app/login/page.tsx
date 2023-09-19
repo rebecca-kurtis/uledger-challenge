@@ -4,15 +4,11 @@ import React from 'react';
 import LoginForm from './LoginForm';
 
 const LoginPage: React.FC = () => {
-  const handleLogin = (username: string, password: string) => {
- 
-    console.log(`Logging in with username: ${username} and password: ${password}`);
-  };
 
   return (
     <div>
-      <h1>Login Page</h1>
-      <LoginForm onSubmit={handleLogin} />
+      <h1 className="text-center mt-8 text-4xl text-gray-700 font-bold mb-2">Login: </h1>
+      <LoginForm />
     </div>
   );
 };

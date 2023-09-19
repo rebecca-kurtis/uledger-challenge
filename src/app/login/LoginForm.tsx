@@ -1,22 +1,39 @@
-import React, { FormEvent } from "react";
+import React from "react";
 
-interface LoginFormProps {
-  onSubmit: (username: string, password: string) => void;
-}
+interface LoginFormProps {}
 
 const LoginForm: React.FC<LoginFormProps> = () => {
   return (
-    <form>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input type="text" id="username" required />
+    <form className="max-w-md mx-auto mt-8 bg-blue-400 p-6 rounded-lg shadow-md">
+      <div className="mb-4">
+        <label className="block text-gray-700 font-bold mb-2">
+          Username
+        </label>
+        <input
+          type="text"
+          id="username"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          required
+        />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" required />
+      <div className="mb-4">
+        <label className="block text-gray-700 font-bold mb-2">
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          required
+        />
       </div>
-      <div>
-        <button type="submit">Login</button>
+      <div className="text-center">
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Login
+        </button>
       </div>
     </form>
   );
