@@ -7,7 +7,7 @@ const RegisterPage: React.FC = () => {
       <h1 className="text-center mt-8 text-4xl text-gray-700 font-bold mb-2">
         Register:
       </h1>
-      <RegistrationForm />
+      <RegistrationForm/>
     </div>
   );
 };
