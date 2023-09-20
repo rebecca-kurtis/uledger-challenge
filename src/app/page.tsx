@@ -1,8 +1,12 @@
+import React from "react";
 
-export default function Home() {
+
+const HomePage: React.FC = () => {
   return (
-    <main>
-      <h1>Hello</h1>
-    </main>
+    <div className="flex justify-end justify-col container mx-auto mt-8">
+     
+    </div>
   );
-}
+};
+
+export default HomePage;
