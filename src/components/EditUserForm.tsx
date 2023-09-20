@@ -46,7 +46,7 @@ export default function EditUserForm({ firstName,
       if (!res.ok) {
         throw new Error("Failed to update user")
       }
-
+      router.refresh
       router.push("/")
 
     } catch (error) {

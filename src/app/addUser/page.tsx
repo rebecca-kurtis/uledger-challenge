@@ -35,6 +35,7 @@ function AddUser(props: Props) {
       });
 
       if (res.ok) {
+        router.refresh
         router.push('/')
       } else {
         throw new Error("Failed to create a user")
@@ -47,13 +48,14 @@ function AddUser(props: Props) {
 
   return (
     <form onSubmit={handleSubmit} className='flex flex-col gap-3'>
-      <input
+      {/* user id? employee id */}
+      {/* <input
         onChange={(e) => setId(e.target.value)}
         value={id}
         className='border border-slate-500 px-8 py-2'
         type="text"
         placeholder='User Number'
-      />
+      /> */}
       <input
         onChange={(e) => setFirstName(e.target.value)}
         value={first_name}
