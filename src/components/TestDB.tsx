@@ -14,7 +14,9 @@ export default function TestDB() {
         </div>
         <div className="flex gap-2">
           <RemoveBtn />
-          <Link href={'/editTopic/123'} />
+          <Link href={'/editTopic/123'}>
+            <HiPencilAlt size={24} />
+          </Link>
         </div>
       </div>
 
