@@ -26,7 +26,7 @@ export default async function UsersList() {
 
   return (
     <>
-      {users.map((user) => (
+      {users.map((user: any) => (
 
         <div key={`${user.id}`} className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start">
           <div>
@@ -36,7 +36,7 @@ export default async function UsersList() {
             <h3>{`Group: ${user.group}`}</h3>
           </div>
           <div className="flex gap-2">
-            <RemoveBtn />
+            <RemoveBtn id={user._id} />
             <Link href={`/editUser/${user._id}`}>
               <HiPencilAlt size={24} />
             </Link>

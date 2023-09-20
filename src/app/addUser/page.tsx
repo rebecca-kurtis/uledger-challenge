@@ -1,39 +1,69 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-type Props = {}
+type Props = {
+}
 
-function AddUser({ }: Props) {
+function AddUser(props: Props) {
 
-  const [employerId, setEmployerId] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("")
+  const [id, setId] = useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("")
   const [title, setTitle] = useState("");
   const [department, setDepartment] = useState("")
   const [group, setGroup] = useState("")
 
+  const router = useRouter();
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+
+    if (!id || !first_name || !last_name || !title || !department || !group) {
+      alert('all fields are required');
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:3000/api/users", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify({ id, first_name, last_name, title, department, group })
+      });
+
+      if (res.ok) {
+        router.push('/')
+      } else {
+        throw new Error("Failed to create a user")
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 
   return (
-    <form className='flex flex-col gap-3'>
+    <form onSubmit={handleSubmit} className='flex flex-col gap-3'>
       <input
-        onChange={(e) => setEmployerId(e.target.value)}
-        value={employerId}
+        onChange={(e) => setId(e.target.value)}
+        value={id}
         className='border border-slate-500 px-8 py-2'
         type="text"
         placeholder='User Number'
       />
       <input
         onChange={(e) => setFirstName(e.target.value)}
-        value={firstName}
+        value={first_name}
         className='border border-slate-500 px-8 py-2'
         type="text"
         placeholder='User First Name'
       />
       <input
         onChange={(e) => setLastName(e.target.value)}
-        value={lastName}
+        value={last_name}
         className='border border-slate-500 px-8 py-2'
         type="text"
         placeholder='User Last Name'
