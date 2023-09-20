@@ -1,20 +1,12 @@
-"use client"
-import Test from "./testfile";
+import React from "react";
 
-import Navbar from "../../src/components/Navbar";
-import Footer from "../../src/components/Footer";
 
-export default function Home() {
+const HomePage: React.FC = () => {
   return (
-
-    <div>
-       <Navbar/>
-       <main>
-      <h1>Hello</h1>
-      <Test />
-    </main>
-    <Footer/>
+    <div className="flex justify-end justify-col container mx-auto mt-8">
+     
     </div>
-   
   );
-}
+};
+
+export default HomePage;

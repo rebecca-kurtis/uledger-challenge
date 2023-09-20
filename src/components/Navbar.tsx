@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link href="/Register" passHref>
+            <Link href="/register" passHref>
               Register
             </Link>
           </li>
