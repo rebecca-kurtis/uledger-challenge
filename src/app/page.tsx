@@ -1,15 +1,12 @@
-import TestDB from '@/components/TestDB'
-import UsersList from '@/components/UsersList'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from "react";
 
 
-export default function Home() {
+const HomePage: React.FC = () => {
   return (
-    <main>
-      <h4>User Database</h4>
-      <Link className='rounded-md bg-blue-500 px-2 text-white font-bold' href={"/addUser"}>Add User</Link>
-      <UsersList />
-    </main>
-  )
-}
+    <div className="flex justify-end justify-col container mx-auto mt-8">
+
+    </div>
+  );
+};
+
+export default HomePage;
